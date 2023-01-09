@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2000-2014 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ *
+ *******************************************************************************/
+ -->
+<definition>
+    <import>
+        <package>org.eclipse.sapphire.ui.renderers.swt</package>
+        <package>com.liferay.ide.project.ui.action</package>
+        <package>com.liferay.ide.project.ui.wizard</package>
+        <package>org.eclipse.sapphire.ui.forms.swt</package>
+    </import>
+    <wizard>
+        <id>ImportLiferayWorkspaceWizard</id>
+        <element-type>com.liferay.ide.project.core.workspace.ImportLiferayWorkspaceOp</element-type>
+        <label>Import Liferay Workspace</label>
+        <page>
+            <id>ImportLiferayWorkspacePage</id>
+            <label>Import Liferay Workspace</label>
+            <content>
+                <property-editor>WorkspaceLocation</property-editor>
+                <spacer></spacer>
+                <property-editor>buildType</property-editor>
+                <spacer></spacer>
+                <property-editor>
+                    <visible-when>${ Severity(Validation(workspaceLocation)) == 'OK' &amp;&amp; hasBundlesDir == 'false' &amp;&amp; showDownloadBundle == 'true' }</visible-when>
+                    <property>provisionLiferayBundle</property>
+                </property-editor>
+                <property-editor>
+                    <visible-when>${ hasBundlesDir == 'true' || provisionLiferayBundle == 'true' }</visible-when>
+                    <property>serverName</property>
+                </property-editor>
+                <property-editor>
+                    <visible-when>${ provisionLiferayBundle == 'true' &amp;&amp; hasBundlesDir == 'false'}</visible-when>
+                    <property>bundleUrl</property>
+                    <label>Bundle url</label>
+                </property-editor>
+                <spacer></spacer>
+                <custom>
+                    <class>com.liferay.ide.project.ui.wizard.WorkingSetCustomPart</class>
+                </custom>                
+            </content>
+            <scale-vertically>true</scale-vertically>
+            <margin-right>10</margin-right>
+            <scroll-vertically>true</scroll-vertically>
+            <margin-left>0</margin-left>
+            <margin-bottom>0</margin-bottom>
+            <margin-top>0</margin-top>
+            <margin-horizontal>0</margin-horizontal>
+            <margin-vertical>0</margin-vertical>
+            <margin>0</margin>
+            <description>Select location of Liferay workspace parent directory.</description>
+        </page>
+        <description>Import Liferay Workspace</description>
+        <image>LiferayWorkspaceWizard.png</image>
+    </wizard>
+</definition>

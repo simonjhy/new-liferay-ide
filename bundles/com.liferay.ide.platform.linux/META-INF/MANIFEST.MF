@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Linux
+Bundle-SymbolicName: com.liferay.ide.platform.linux
+Bundle-Version: 4.0.0.qualifier
+Bundle-Vendor: Liferay
+Automatic-Module-Name: com.liferay.ide.platform.linux
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
+Fragment-Host: com.liferay.ide.platform

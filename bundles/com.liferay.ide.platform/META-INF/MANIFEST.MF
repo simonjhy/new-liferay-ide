@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Platform
+Bundle-SymbolicName: com.liferay.ide.platform
+Bundle-Version: 4.0.0.qualifier
+Bundle-Vendor: Liferay
+Automatic-Module-Name: com.liferay.ide.platform
+Bundle-RequiredExecutionEnvironment: JavaSE-11

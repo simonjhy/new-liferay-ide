@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2000-2019 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ *
+ *******************************************************************************/
+ -->
+<definition>
+    <wizard>
+        <id>NewModuleExtFilesWizard</id>
+        <element-type>com.liferay.ide.project.core.modules.ext.NewModuleExtFilesOp</element-type>
+        <label>New Liferay Module Ext Files</label>
+		<page>
+			<id>ModuleExtOverrideFiles</id>
+			<label>Module Ext Override Files</label>
+			<content>
+				<property-editor>
+					<property>ModuleExtProjectName</property>
+					<style>Sapphire.PropertyEditor.PopUpListField.Strict</style>
+				</property-editor>
+				<property-editor>
+					<property>OriginalModuleHint</property>
+                    <hint>
+                        <name>read.only</name>
+                        <value>true</value>
+                    </hint>
+				</property-editor>
+				<spacer/>
+				<property-editor>
+					<property>OverrideFiles</property>
+					<action>
+						<id>AddFilesFromSourceJar</id>
+						<label>Add files from Original Module to override...</label>
+						<image>icons/n16/server_new.png</image>
+						<location>before:Sapphire.Add</location>
+					</action>
+					<action-handler>
+						<action>AddFilesFromSourceJar</action>
+						<id>AddFilesFromSourceJarHandler</id>
+						<impl>com.liferay.ide.project.ui.modules.ext.AddFilesFromSourceJarAction</impl>
+					</action-handler>
+					<scale-vertically>true</scale-vertically>
+				</property-editor>
+			</content>
+			<description>Add files from original module to override</description>
+			<scale-vertically>true</scale-vertically>
+			<margin-right>10</margin-right>
+			<scroll-vertically>true</scroll-vertically>
+			<margin-left>0</margin-left>
+			<margin-bottom>0</margin-bottom>
+			<margin-top>0</margin-top>
+			<margin-horizontal>0</margin-horizontal>
+			<margin-vertical>0</margin-vertical>
+			<margin>0</margin>
+			<height>450</height>
+			<image>NewModuleExtWizard.png</image>
+		</page>
+        <description>Add files from original module to override</description>
+    </wizard>
+</definition>
